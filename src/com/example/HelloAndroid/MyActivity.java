@@ -2,7 +2,6 @@ package com.example.HelloAndroid;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,18 +40,12 @@ public class MyActivity extends Activity {
     }
 
     public void calculateBMI(){
-        Log.i("calculateBMI", "Button pressed");
         height = Double.parseDouble(heightIn.getText().toString());
         weight = Double.parseDouble(weightIn.getText().toString());
-
-        Log.i("calculateBMI", String.valueOf(height));
-        Log.i("calculateBMI", String.valueOf(weight));
 
         double bmi = weight/(height*height)*703.0;
 
         String result = String.format("%.2f", bmi);
-
-        Log.i("calculateBMI", result);
 
         resultBMI.setText(result, TextView.BufferType.NORMAL);
 
